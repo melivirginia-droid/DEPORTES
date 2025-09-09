@@ -1,0 +1,196 @@
+<html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baloncesto-Deportes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset básico */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            line-height:1.6; 
+            background: linear-gradient(135deg, #000000, #ff6f00); /* Fondo negro con degradado naranja */
+            color:#fff; 
+            overflow-x:hidden; 
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #000000, #ff8c00); /* Header degradado negro-naranja */
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity:0; transform: translateY(-50px); }
+            to { opacity:1; transform: translateY(0); }
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style:none;
+            margin-top:20px;
+            flex-wrap:wrap;
+        }
+
+        nav ul li a {
+            color:#fff;
+            text-decoration:none;
+            margin:0 15px;
+            font-weight:bold;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700; /* Amarillo brillante al pasar el mouse */
+            transform: scale(1.2);
+        }
+
+        /* Main */
+        main {
+            max-width:1000px;
+            margin:auto;
+            padding:20px;
+        }
+
+        section {
+            background: rgba(0,0,0,0.7); /* Fondo oscuro semi-transparente para contraste */
+            padding:30px 20px;
+            margin-bottom:30px;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.5);
+            opacity:0;
+            transform: translateY(50px);
+            animation: fadeUp 1s forwards;
+        }
+
+        section:nth-child(1){ animation-delay: 0.2s; }
+        section:nth-child(2){ animation-delay: 0.4s; }
+        section:nth-child(3){ animation-delay: 0.6s; }
+
+        @keyframes fadeUp {
+            to { opacity:1; transform: translateY(0); }
+        }
+
+        section h2 {
+            color:#ff8c00; /* Títulos en naranja brillante */
+            margin-bottom:15px;
+            text-align:center;
+        }
+
+        section ul { margin-top:10px; }
+        section ul li { margin-bottom:8px; }
+
+        video {
+            width:100%;
+            margin-top:15px;
+            border-radius:10px;
+            transition: transform 0.3s;
+            border: 2px solid #ff8c00; /* Borde naranja para resaltar videos */
+        }
+
+        video:hover { transform: scale(1.05); }
+
+        footer {
+            text-align:center;
+            padding:20px;
+            background:#000000; /* Footer negro */
+            color:#ff8c00;
+            font-weight:bold;
+        }
+
+        /* Responsividad */
+        @media (max-width:768px){
+            nav ul { flex-direction:column; gap:10px; }
+            header h1 { font-size:2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Deportes</h1>
+        <nav>
+            <ul>
+                <li><a href="DEPORTE.HTML">INICIO</a></li>
+                <li><a href="FUTBOL.HTML">FUTBOL</a></li>
+                <li><a href="BALONCESTO.HTML">BALONCESTO</a></li>
+                <li><a href="VOLEIBOL.HTML">VOLEIBOL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+<body>
+    <header>
+        <h1>Baloncesto</h1>
+        <nav>
+            <ul>
+                <li><a href="#que-es">¿Qué es?</a></li>
+                <li><a href="#reglas">Reglas</a></li>
+                <li><a href="#videos">Videos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección Qué es -->
+        <section id="que-es">
+            <h2>¿Qué es el Baloncesto?</h2>
+            <p>El baloncesto es un deporte donde dos equipos de cinco jugadores buscan encestar la pelota en la canasta del equipo contrario. Es dinámico y requiere habilidades de coordinación, velocidad y estrategia.</p>
+        </section>
+
+        <!-- Sección Reglas -->
+        <section id="reglas">
+            <h2>Reglas del Baloncesto</h2>
+            <ul>
+                <li>El partido se divide en 4 cuartos de 10-12 minutos.</li>
+                <li>Gana el equipo que tenga más puntos al final del partido.</li>
+                <li>No se puede caminar con la pelota sin botarla (regla del dribbling).</li>
+                <li>El contacto físico excesivo se considera falta.</li>
+                <li>Existen tiros libres cuando hay faltas y se aplican sanciones de acuerdo a las reglas.</li>
+            </ul>
+        </section>
+
+        <!-- Sección Videos -->
+        <section id="videos">
+            <h2>Videos de Baloncesto</h2>
+           <video controls>
+    <source src="C:/Users/N-C/Downloads/BALONCESTOEXP.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+</video>
+           <video controls>
+    <source src="C:/Users/N-C/Downloads/BALONCESTOVIDEO.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+</video>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Baloncesto - Todos los derechos reservados
+    </footer>
+
+    <script>
+        // Animaciones al hacer scroll
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            sections.forEach(sec => {
+                const rect = sec.getBoundingClientRect();
+                if(rect.top < window.innerHeight - 100){
+                    sec.style.opacity = 1;
+                    sec.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

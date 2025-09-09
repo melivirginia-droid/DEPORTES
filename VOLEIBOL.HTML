@@ -1,0 +1,202 @@
+<html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voleibol-Deportes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset básico */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            line-height:1.6; 
+            background: linear-gradient(135deg, #000000, #00c853); /* Fondo negro con degradado verde */
+            color:#fff; 
+            overflow-x:hidden; 
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #000000, #00e676); /* Header degradado negro-verde */
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity:0; transform: translateY(-50px); }
+            to { opacity:1; transform: translateY(0); }
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style:none;
+            margin-top:20px;
+            flex-wrap:wrap;
+        }
+
+        nav ul li a {
+            color:#fff;
+            text-decoration:none;
+            margin:0 15px;
+            font-weight:bold;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #b2ff59; /* Verde claro al pasar el mouse */
+            transform: scale(1.2);
+        }
+
+        /* Main */
+        main {
+            max-width:1000px;
+            margin:auto;
+            padding:20px;
+        }
+
+        section {
+            background: rgba(0,0,0,0.7); /* Fondo oscuro semi-transparente */
+            padding:30px 20px;
+            margin-bottom:30px;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.5);
+            opacity:0;
+            transform: translateY(50px);
+            animation: fadeUp 1s forwards;
+        }
+
+        section:nth-child(1){ animation-delay: 0.2s; }
+        section:nth-child(2){ animation-delay: 0.4s; }
+        section:nth-child(3){ animation-delay: 0.6s; }
+
+        @keyframes fadeUp {
+            to { opacity:1; transform: translateY(0); }
+        }
+
+        section h2 {
+            color:#00e676; /* Títulos en verde brillante */
+            margin-bottom:15px;
+            text-align:center;
+        }
+
+        section ul { margin-top:10px; }
+        section ul li { margin-bottom:8px; }
+
+        video {
+            width:100%;
+            margin-top:15px;
+            border-radius:10px;
+            transition: transform 0.3s;
+            border: 2px solid #00e676; /* Borde verde para resaltar videos */
+        }
+
+        video:hover { transform: scale(1.05); }
+
+        footer {
+            text-align:center;
+            padding:20px;
+            background:#000000; /* Footer negro */
+            color:#00e676;
+            font-weight:bold;
+        }
+
+        /* Responsividad */
+        @media (max-width:768px){
+            nav ul { flex-direction:column; gap:10px; }
+            header h1 { font-size:2.5rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Deportes</h1>
+        <nav>
+            <ul>
+                <li><a href="DEPORTE.HTML">INICIO</a></li>
+                <li><a href="FUTBOL.HTML">FUTBOL</a></li>
+                <li><a href="BALONCESTO.HTML">BALONCESTO</a></li>
+                <li><a href="VOLEIBOL.HTML">VOLEIBOL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+<body>
+    <header>
+        <h1>Voleibol</h1>
+        <nav>
+            <ul>
+                <li><a href="#que-es">¿Qué es?</a></li>
+                <li><a href="#reglas">Reglas</a></li>
+                <li><a href="#videos">Videos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección Qué es -->
+        <section id="que-es">
+            <h2>¿Qué es el Voleibol?</h2>
+            <p>El voleibol es un deporte en el que dos equipos intentan pasar la pelota por encima de la red y que toque el suelo del campo contrario. Se requiere coordinación, reflejos rápidos y trabajo en equipo.</p>
+        </section>
+
+        <!-- Sección Reglas -->
+        <section id="reglas">
+            <h2>Reglas del Voleibol</h2>
+            <ul>
+                <li>El partido se juega en 5 sets, gana el equipo que llegue primero a 25 puntos con ventaja de 2 en cada set.</li>
+                <li>No se puede tocar la red durante el juego.</li>
+                <li>Cada equipo puede tocar la pelota hasta 3 veces antes de devolverla.</li>
+                <li>Se permite golpear la pelota con cualquier parte del cuerpo pero no sostenerla.</li>
+                <li>Si la pelota toca fuera del campo o no pasa la red correctamente, es punto para el otro equipo.</li>
+            </ul>
+        </section>
+
+        <!-- Sección Videos -->
+        <section id="videos">
+
+            <h2>Videos de Voleibol</h2>
+           <video controls>
+    <source src="C:/Users/N-C/Downloads/VOLEIEXP.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+</video>
+
+           <video controls>
+    <source src="C:/Users/N-C/Downloads/VOLEYVIDEO.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+</video>
+
+  
+    </main>
+
+    <footer>
+        &copy; 2025 Voleibol - Todos los derechos reservados
+    </footer>
+
+    <script>
+        // Animaciones al hacer scroll
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            sections.forEach(sec => {
+                const rect = sec.getBoundingClientRect();
+                if(rect.top < window.innerHeight - 100){
+                    sec.style.opacity = 1;
+                    sec.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

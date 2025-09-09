@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fútbol-Deportes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset básico */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            line-height:1.6; 
+            background: linear-gradient(135deg, #000000, #001f4d); /* Fondo negro con azul */
+            color:#fff; 
+            overflow-x:hidden; 
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #000000, #0033cc); /* Header degradado negro-azul */
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity:0; transform: translateY(-50px); }
+            to { opacity:1; transform: translateY(0); }
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style:none;
+            margin-top:20px;
+            flex-wrap:wrap;
+        }
+
+        nav ul li a {
+            color:#fff;
+            text-decoration:none;
+            margin:0 15px;
+            font-weight:bold;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00ccff;
+            transform: scale(1.2);
+        }
+
+        /* Main */
+        main {
+            max-width:1000px;
+            margin:auto;
+            padding:20px;
+        }
+
+        section {
+            background: rgba(0,0,0,0.7); /* Fondo oscuro semi-transparente para secciones */
+            padding:30px 20px;
+            margin-bottom:30px;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.5);
+            opacity:0;
+            transform: translateY(50px);
+            animation: fadeUp 1s forwards;
+        }
+
+        section:nth-child(1){ animation-delay: 0.2s; }
+        section:nth-child(2){ animation-delay: 0.4s; }
+        section:nth-child(3){ animation-delay: 0.6s; }
+
+        @keyframes fadeUp {
+            to { opacity:1; transform: translateY(0); }
+        }
+
+        section h2 {
+            color:#00ccff; /* Títulos azul brillante */
+            margin-bottom:15px;
+            text-align:center;
+        }
+
+        section ul { margin-top:10px; }
+        section ul li { margin-bottom:8px; }
+
+        video {
+            width:100%;
+            margin-top:15px;
+            border-radius:10px;
+            transition: transform 0.3s;
+            border: 2px solid #00ccff; /* Borde azul para destacar videos */
+        }
+
+        video:hover { transform: scale(1.05); }
+
+        /* Footer */
+        footer {
+            text-align:center;
+            padding:20px;
+            background:#000000; /* Footer negro */
+            color:#00ccff;
+            font-weight:bold;
+        }
+
+        /* Animaciones de scroll */
+        @media (max-width:768px){
+            nav ul { flex-direction:column; gap:10px; }
+            header h1 { font-size:2.5rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Deportes</h1>
+        <nav>
+            <ul>
+                <li><a href="DEPORTE.HTML">INICIO</a></li>
+                <li><a href="FUTBOL.HTML">FUTBOL</a></li>
+                <li><a href="BALONCESTO.HTML">BALONCESTO</a></li>
+                <li><a href="VOLEIBOL.HTML">VOLEIBOL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+<body>
+    <header>
+        <h1>Fútbol</h1>
+        <nav>
+            <ul>
+                <li><a href="#que-es">¿Qué es?</a></li>
+                <li><a href="#reglas">Reglas</a></li>
+                <li><a href="#videos">Videos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección Qué es -->
+        <section id="que-es">
+            <h2>¿Qué es el Fútbol?</h2>
+            <p>El fútbol es un deporte jugado entre dos equipos de 11 jugadores cada uno, cuyo objetivo principal es marcar goles en la portería contraria. Es uno de los deportes más populares y practicados en el mundo.</p>
+        </section>
+
+        <!-- Sección Reglas -->
+        <section id="reglas">
+            <h2>Reglas del Fútbol</h2>
+            <ul>
+                <li>El partido se juega en dos tiempos de 45 minutos.</li>
+                <li>Gana el equipo que marque más goles.</li>
+                <li>No se puede tocar el balón con las manos, excepto el portero dentro del área.</li>
+                <li>En caso de empate, puede jugarse tiempo extra o penales dependiendo del torneo.</li>
+                <li>Existen faltas y sanciones como tarjetas amarillas y rojas.</li>
+            </ul>
+        </section>
+
+        <!-- Sección Videos -->
+        <section id="videos">
+            <h2>Videos de Fútbol</h2>
+
+           <video controls>
+    <source src="C:/Users/N-C/Downloads/FUTBOLEXP.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+</video>
+           
+           <video controls>
+    <source src="C:/Users/N-C/Downloads/FUTBOLVIDEO.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+</video>
+
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Fútbol - Todos los derechos reservados
+    </footer>
+
+    <script>
+        // Animaciones al hacer scroll
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            sections.forEach(sec => {
+                const rect = sec.getBoundingClientRect();
+                if(rect.top < window.innerHeight - 100){
+                    sec.style.opacity = 1;
+                    sec.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,181 @@
+<html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deportes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            /* Fondo degradado multicolor: negro, azul, verde claro y naranja */
+            background: linear-gradient(135deg, #000000, #001f4d, #00ff99, #ff6600);
+            color:#fff; 
+            overflow-x:hidden; 
+        }
+
+        header {
+            background: linear-gradient(90deg, #000000, #0033cc, #00ff99, #ff6600); /* Header degradado */
+            color:#fff;
+            padding:40px 20px;
+            text-align:center;
+            position:relative;
+        }
+
+        header h1 {
+            font-size:3rem;
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity:0; transform: translateY(-50px); }
+            to { opacity:1; transform: translateY(0); }
+        }
+
+        nav ul {
+            display:flex;
+            justify-content:center;
+            list-style:none;
+            margin-top:20px;
+            flex-wrap:wrap;
+        }
+
+        nav ul li a {
+            color:#fff;
+            text-decoration:none;
+            margin:0 15px;
+            font-weight:bold;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover { color:#ffff66; transform:scale(1.2); }
+
+        main {
+            max-width:1000px;
+            margin:auto;
+            padding:20px;
+        }
+
+        section {
+            background: rgba(0,0,0,0.7); /* Fondo semi-transparente para contraste */
+            padding:30px 20px;
+            margin-bottom:30px;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.5);
+            opacity:0;
+            transform: translateY(50px);
+            animation: fadeUp 1s forwards;
+        }
+
+        section:nth-child(1){ animation-delay:0.2s; }
+        section:nth-child(2){ animation-delay:0.4s; }
+        section:nth-child(3){ animation-delay:0.6s; }
+
+        @keyframes fadeUp {
+            to { opacity:1; transform: translateY(0); }
+        }
+
+        section h2 {
+            text-align:center;
+            margin-bottom:15px;
+            color:#00ff99; /* Verde claro brillante para títulos */
+        }
+
+        section p { margin-bottom:15px; }
+
+        video {
+            width:100%;
+            border-radius:10px;
+            transition: transform 0.3s;
+            border: 2px solid #ff6600; /* borde naranja para resaltar */
+        }
+
+        video:hover { transform: scale(1.05); }
+
+        footer {
+            text-align:center;
+            padding:20px;
+            background: #000000; /* footer negro */
+            color:#00ff99;
+            font-weight:bold;
+        }
+
+        @media(max-width:768px){
+            nav ul { flex-direction:column; gap:10px; }
+            header h1 { font-size:2.5rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Deportes</h1>
+        <nav>
+            <ul>
+                <li><a href="DEPORTE.HTML">INICIO</a></li>
+                <li><a href="FUTBOL.HTML">FUTBOL</a></li>
+                <li><a href="BALONCESTO.HTML">BALONCESTO</a></li>
+                <li><a href="VOLEIBOL.HTML">VOLEIBOL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Fútbol -->
+        <section id="futbol">
+            <h2>Fútbol</h2>
+            <p>El fútbol es un deporte muy popular en el que dos equipos compiten para marcar goles en la portería contraria. Cada equipo tiene 11 jugadores y requiere estrategia y trabajo en equipo.</p>
+
+<video controls>
+    <source src="C:/Users/N-C/Downloads/FUTBOLVIDEO.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+</video>
+
+
+        </section>
+
+        <!-- Baloncesto -->
+        <section id="baloncesto">
+            <h2>Baloncesto</h2>
+            <p>El baloncesto se juega entre dos equipos de cinco jugadores. El objetivo es encestar la pelota en la canasta del equipo contrario. Es rápido y requiere habilidad y coordinación.</p>
+
+<video controls>
+    <source src="C:/Users/N-C/Downloads/BALONCESTOVIDEO.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+</video>
+
+
+        </section>
+
+        <section id="voleibol">
+            <h2>Voleibol</h2>
+            <p>El voleibol enfrenta a dos equipos que intentan pasar la pelota por encima de la red y que toque el suelo del campo contrario. Es dinámico y requiere reflejos y trabajo en equipo.</p>
+
+
+<video controls>
+    <source src="C:/Users/N-C/Downloads/VOLEYVIDEO.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+</video>
+
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Deportes 360 - Todos los derechos reservados
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            sections.forEach(sec => {
+                const rect = sec.getBoundingClientRect();
+                if(rect.top < window.innerHeight - 100){
+                    sec.style.opacity = 1;
+                    sec.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
